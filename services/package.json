@@ -1,0 +1,16 @@
+{
+  "name": "jdj-dashboard-services",
+  "version": "1.0.0",
+  "description": "Services (API) for JDJ dashboard app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "tedious": "^4.1.3"
+  }
+}
