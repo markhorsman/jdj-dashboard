@@ -13,6 +13,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    "gatsby-plugin-sass",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -27,15 +28,24 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
 
     {
       resolve: 'gatsby-source-apiserver',
       options: {
         // Type prefix of entities from server
-        typePrefix: 'swapi__',
+        typePrefix: 'jdj__',
 
         // The url, this should be the endpoint you are attempting to pull data from
-        url: `https://swapi.co/api/`,
+        url: `http://127.0.0.1:8280/`,
 
         method: 'get',
 
@@ -104,28 +114,28 @@ module.exports = {
         // any not specified are defaulted to the general properties that are specified
         entitiesArray: [
             {
-              url: `https://swapi.co/api/people/`,
+              url: `http://127.0.0.1:8280/stock/0`,
               method: 'get',
               headers: {
                 'Content-Type': 'application/json'
               },
-              name: `people`,
+              name: `stock_rent`,
             },
             {
-              url: `https://swapi.co/api/films/`,
+              url: `http://127.0.0.1:8280/stock/1`,
               method: 'get',
               headers: {
                 'Content-Type': 'application/json'
               },
-              name: `films`,
+              name: `stock_sale`,
             },
             {
-              url: `http://127.0.0.1:8280/`,
+              url: `http://127.0.0.1:8280/stock/3`,
               method: 'get',
               headers: {
                 'Content-Type': 'application/json'
               },
-              name: `stock`,
+              name: `stock_repair`,
             }
         ]
       }
