@@ -3,6 +3,8 @@ import Helmet from "react-helmet";
 import Layout from "../layout";
 import Card from "react-md/lib/Cards/Card";
 import CardText from "react-md/lib/Cards/CardText";
+import { Link } from "gatsby"
+import { getUser, isLoggedIn } from "../services/auth"
 import loremIpsum from 'lorem-ipsum';
 import config from "../../data/SiteConfig";
 
@@ -20,24 +22,20 @@ class Index extends React.Component {
                         <Card className="md-grid md-cell--8">
                             <div className="about-wrapper">
                                 <CardText>
-                                    <h2>ijzersterk familiebedrijf krijgt nieuwe uitstraling en structuur</h2>
-
-                                    <p className="about-text md-body-1">
-                                        In 2015 hebben wij aangekondigd ons bedrijf te verdelen in 3 business units zijnde Mechanical, Specialties en International. Dit om meer duidelijkheid te geven richting de markt waarin wij opereren. Dit was stap 1 van ons masterplan. Wij gaan nu de laatste fase in van ons masterplan en wel om de business units verder te formaliseren. Dit doen we om onze missie meer kracht bij te zetten, wat tot verdere internationale groei in de olie, gas en energie wereld zal leiden.
+                                    <h1>Hi {isLoggedIn() ? getUser().name : "people"}</h1>
+                                    <p>
+                                        {isLoggedIn() ? (
+                                            <>
+                                                You are logged in, so check your{" "}
+                                                <Link to="/app/profile">profile</Link>
+                                            </>
+                                        ) : (
+                                            <>
+                                                You should <Link to="/app/login">log in</Link> to see restricted
+                                                content
+                                            </>
+                                        )}
                                     </p>
-                                    <p className="about-text md-body-1">
-                                        Wij hebben de overtuiging dat we door de inrichting van onze business units, en daarin opererende afdelingen, internationaal sterker over komen en er meer kansen liggen voor de individuele groei van de business units. Wij zien middels het nemen van deze laatste stap de toekomst positief tegemoet, waarin wij tevens uitkijken naar een continuering van onze langdurige samenwerking met onze bestaande relaties.
-                                    </p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
-                                    <p>{loremIpsum({ units: 'paragraphs', count: 1 })}</p>
                                 </CardText>
                             </div>
                         </Card>

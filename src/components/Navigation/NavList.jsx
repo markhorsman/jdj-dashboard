@@ -17,19 +17,25 @@ function GetNavList(config) {
       primaryText: "Overzicht huur artikelen",
       leftIcon: <FontIcon>list</FontIcon>,
       component: Link,
-      to: "/stock_rent"
+      to: "/app/stock_rent"
+    },
+    {
+      divider: true
     },
     {
       primaryText: "Overzicht verkoop artikelen",
       leftIcon: <FontIcon>store</FontIcon>,
       component: Link,
-      to: "/stock_sale"
+      to: "/app/stock_sale"
+    },
+    {
+      divider: true
     },
     {
       primaryText: "Overzicht reparatie artikelen",
       leftIcon: <FontIcon>build</FontIcon>,
       component: Link,
-      to: "/stock_repair"
+      to: "/app/stock_repair"
     }
   ];
 

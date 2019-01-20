@@ -10,6 +10,8 @@ module.exports = {
   postDefaultCategoryID: "Tech", // Default category for posts.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   dateFormat: "DD/MM/YYYY", // Date format for display.
-  userLinks: [],
+  userLinks: [
+
+  ],
   copyright: "Copyright © 2019. Taffgear" // Copyright string for the footer of the website and RSS feed.
 };
